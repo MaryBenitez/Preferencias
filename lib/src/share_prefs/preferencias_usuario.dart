@@ -17,11 +17,11 @@ class PrefereciasUsuario {
   }
 
   //Ninguna de estas propiedad se usan
-  bool _colorSecundario;
+  /*bool _colorSecundario;
   int _genero;
-  String _nombre;
+  String _nombre;*/
 
-  //getters y setters
+  //get y set de genero
   get genero {
     return _prefs.getInt('genero') ?? 1; //?? -- CONDICION QUE SI NO EXISTE
   }
@@ -29,4 +29,23 @@ class PrefereciasUsuario {
   set genero(int value) {
     _prefs.setInt('genero', value);
   }
+
+  //get y set de color
+  get colorSecundario {
+    return _prefs.getBool('colorSecundario') ?? false;
+  }
+
+  set colorSecundario(bool value) {
+    _prefs.setBool('colorSecundario', value);
+  }
+
+  //get y set de nombreUsuario
+  get nombreUsuario {
+    return _prefs.getString('nombreUsuario') ?? '';
+  }
+
+  set nombreUsuario(String value) {
+    _prefs.setString('nombreUsuario', value);
+  }
+
 }
