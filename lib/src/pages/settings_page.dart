@@ -19,8 +19,24 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   void initState() {
     super.initState();
-
+    cargarPref();
     _textController = new TextEditingController(text: _nombre);
+  }
+
+  cargarPref() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    _genero = prefs.getInt('genero');
+    setState(() {
+      
+    });
+  }
+
+  _setSelectedRadio(int valor) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setInt('genero', valor);
+
+    _genero = valor;
+    setState(() {});
   }
 
   @override
@@ -74,15 +90,5 @@ class _SettingsPageState extends State<SettingsPage> {
             )
           ],
         ));
-  }
-
-  _setSelectedRadio(int valor) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setInt('genero', valor);
-
-    _genero = valor;
-    setState(() {
-      
-    });
   }
 }
