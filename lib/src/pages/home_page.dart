@@ -8,6 +8,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    //Se graban los valores en la prefencia de usuario
+    prefs.ultimaPagina = HomePage.routeName;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Preferencias de Usuario'),

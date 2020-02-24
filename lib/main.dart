@@ -14,11 +14,16 @@ void main() async{
 }
 
 class MyApp extends StatelessWidget {
+
+  final prefs = new PrefereciasUsuario();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Preferencias',
-      initialRoute: HomePage.routeName,
+
+      //Evaluar en las prefencias 
+      initialRoute: prefs.ultimaPagina,
       routes: {
         HomePage.routeName: (BuildContext context) => HomePage(),
         SettingsPage.routeName: (BuildContext context) => SettingsPage(),

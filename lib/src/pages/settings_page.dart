@@ -21,6 +21,9 @@ class _SettingsPageState extends State<SettingsPage> {
   void initState() {
     super.initState();
 
+    //Se graban los valores en la prefencia de usuario
+    prefs.ultimaPagina = SettingsPage.routeName;
+
     _genero = prefs.genero;
     _colorSecundario = prefs.colorSecundario;
 

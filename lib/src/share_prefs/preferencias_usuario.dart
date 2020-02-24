@@ -48,4 +48,13 @@ class PrefereciasUsuario {
     _prefs.setString('nombreUsuario', value);
   }
 
+  //set y get de Ultima pagina abierta
+  get ultimaPagina {
+    return _prefs.getString('ultimaPagina') ?? 'home'; //Si no existe la ultima pagina, me redigira al home
+  }
+
+  set ultimaPagina(String value) {
+    _prefs.setString('ultimaPagina', value);
+  }
+
 }
